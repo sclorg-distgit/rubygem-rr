@@ -6,7 +6,7 @@
 Summary: RR (Double Ruby) is a test double framework
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 1.1.2
-Release: 6%{?dist}
+Release: 7%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://pivotallabs.com
@@ -114,12 +114,15 @@ rm  -rf %{buildroot}%{gem_instdir}/gemfiles
 %{gem_libdir}
 
 %files doc
-%doc %{gem_docdir}/*
+%doc %{gem_docdir}
 %{gem_instdir}/spec
 %{gem_instdir}/doc
 %{gem_instdir}/rr.gemspec
 
 %changelog
+* Fri Apr 08 2016 Pavel Valena <pvalena@redhat.com> - 1.1.2-7
+- Fix ownership of %%{gem_docdir} - rhbz#1090361
+
 * Mon Feb 22 2016 Pavel Valena <pvalena@redhat.com> - 1.1.2-6
 - Add scl macros
 
